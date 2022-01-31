@@ -466,10 +466,10 @@ def run_inference(input_path, model_path, output_dir, need_animation=False, resi
         param.requires_grad = False
 
     # original
-    #brush_large_vertical = read_img(
-        #'brush/brush_large_vertical.png', 'L').to(device)
-    #brush_large_horizontal = read_img(
-        #'brush/brush_large_horizontal.png', 'L').to(device)
+    brush_large_vertical = read_img(
+        'brush/brush_large_vertical.png', 'L').to(device)
+    brush_large_horizontal = read_img(
+        'brush/brush_large_horizontal.png', 'L').to(device)
 
     # spray
     #brush_large_vertical = read_img(
@@ -478,10 +478,10 @@ def run_inference(input_path, model_path, output_dir, need_animation=False, resi
         #'brush/large_horizontal_spray.png', 'L').to(device)
 
     # crayon
-    brush_large_vertical = read_img(
-        'brush/large_vertical_crayon.png', 'L').to(device)
-    brush_large_horizontal = read_img(
-        'brush/large_horizontal_crayon.png', 'L').to(device)
+    #brush_large_vertical = read_img(
+        #'brush/large_vertical_crayon.png', 'L').to(device)
+    #brush_large_horizontal = read_img(
+        #'brush/large_horizontal_crayon.png', 'L').to(device)
 
     meta_brushes = torch.cat(
         [brush_large_vertical, brush_large_horizontal], dim=0)
