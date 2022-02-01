@@ -457,7 +457,7 @@ def run_inference(input_path, model_path, output_dir, need_animation=False, resi
         if not os.path.exists(frame_dir):
             os.mkdir(frame_dir)
     patch_size = 32
-    stroke_num = 8                                                                          ###################################
+    stroke_num = 8                                                                                                 ###################################
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     net_g = network.Painter(5, stroke_num, 256, 8, 3, 3).to(device)
     net_g.load_state_dict(torch.load(model_path))
@@ -490,7 +490,7 @@ def run_inference(input_path, model_path, output_dir, need_animation=False, resi
         original_img = read_img(
             input_path, 'RGB', resize_h, resize_w).to(device)
         original_h, original_w = original_img.shape[-2:]
-        K = 4 # max(math.ceil(math.log2(max(original_h, original_w) / patch_size)), 0)                              ############################ K is here.
+        K = 7 # max(math.ceil(math.log2(max(original_h, original_w) / patch_size)), 0)                              ############################ K is here.
         original_img_pad_size = patch_size * (2 ** K)
         original_img_pad = pad(
             original_img, original_img_pad_size, original_img_pad_size)
