@@ -490,7 +490,7 @@ def run_inference(input_path, model_path, output_dir, need_animation=False, resi
         original_img = read_img(
             input_path, 'RGB', resize_h, resize_w).to(device)
         original_h, original_w = original_img.shape[-2:]
-        K = 5 # max(math.ceil(math.log2(max(original_h, original_w) / patch_size)), 0)                              ############################ K is here.
+        K = 6 # max(math.ceil(math.log2(max(original_h, original_w) / patch_size)), 0)                              ############################ K is here.
         ### K = 7 was out of memory.
         original_img_pad_size = patch_size * (2 ** K)
         original_img_pad = pad(
